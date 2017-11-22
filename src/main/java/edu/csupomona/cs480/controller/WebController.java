@@ -1,5 +1,6 @@
 package edu.csupomona.cs480.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +49,7 @@ public class WebController {
 	 * in your web browser, type the link:
 	 * 	http://localhost:8080/cs480/ping
 	 */
-	@RequestMapping(value = "/cs580/ping", method = RequestMethod.GET)
+	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
 	String healthCheck() {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
@@ -140,5 +141,11 @@ public class WebController {
 		modelAndView.addObject("users", listAllUsers());
 		return modelAndView;
 	}
+	
+	@RequestMapping(value = "/user", method = RequestMethod.GET)
+	public Principal sayHello(Principal principal) {
+			return principal;
+	}
+	
 
 }

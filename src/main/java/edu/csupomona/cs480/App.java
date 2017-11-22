@@ -2,6 +2,7 @@ package edu.csupomona.cs480;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +15,7 @@ import edu.csupomona.cs480.data.provider.UserManager;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
+@EnableOAuth2Sso
 public class App {
 
     /**
