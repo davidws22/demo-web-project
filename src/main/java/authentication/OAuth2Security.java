@@ -1,4 +1,5 @@
 package authentication;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.ResourceServerProperties;
@@ -52,9 +53,9 @@ public class OAuth2Security extends WebSecurityConfigurerAdapter {
 	 * @return OAuth2ClientAuthenticationProcessingFilter
 	 */
 	private OAuth2ClientAuthenticationProcessingFilter filter() {
-		// Creating the filter for "/google/login" url
+		// Creating the filter for "/login/google" url
 		OAuth2ClientAuthenticationProcessingFilter oAuth2Filter = new OAuth2ClientAuthenticationProcessingFilter(
-				"/google/login");
+				"/login/google");
  
  
 		// Creating the rest template for getting connected with OAuth service.
@@ -95,7 +96,7 @@ public class OAuth2Security extends WebSecurityConfigurerAdapter {
 				.logoutSuccessUrl("/")//
 				.permitAll()//
 				.and()//
-				// Setting the filter for the URL "/google/login"
+				// Setting the filter for the URL "/login/google"
 				.addFilterAt(filter(), BasicAuthenticationFilter.class)//
 				.csrf()//
 				.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
