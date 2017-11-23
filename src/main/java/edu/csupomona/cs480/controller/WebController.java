@@ -203,19 +203,19 @@ public class WebController {
 		modelAndView.addObject("users", listAllUsers());
 		return modelAndView;
 	}
-	/*
+	
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public Principal sayHello(Principal principal) {
 			return principal;
 	}
-	*/
 	
-	@RequestMapping(value = "/login/google", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "/google/login", method = RequestMethod.GET)
 	public RedirectView googleConnectionStatus(HttpServletRequest request) throws Exception {
 		return new RedirectView(authorize());
 	}
 
-	@RequestMapping(value = "/login/google", method = RequestMethod.GET, params = "code")
+	@RequestMapping(value = "/google/login", method = RequestMethod.GET, params = "code")
 	public ResponseEntity<String> oauth2Callback(@RequestParam(value = "code") String code) {
 		com.google.api.services.calendar.model.Events eventList;
 		String message;

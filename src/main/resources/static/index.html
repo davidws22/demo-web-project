@@ -1,80 +1,82 @@
-
+<!DOCTYPE html>
 <html lang="en">
-	<!-- This page will be shown when you git the root URL -->
-	<head>
-	    <title>Google OAuth2</title>
-	    <link rel="stylesheet"
-			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	    <meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	    <script src="/js/home-control.js"></script>
-	</head>
-	<style>
-	[ng\:cloak], [ng-cloak], .ng-cloak {
-		display: none !important;
-	}
-	 
-	 
-	.margin-top-5 {
-		margin-top: 10px;
-	}
-	 
-	 
-	.p-img {
-		height: 50px;
-		width: 50px;
-		border-radius: 50%;
-	}
-	</style>
-	<!-- <body onload="healthCheck();"> -->
-	<body ng-app="GoogleOAuth2" ng-controller="AppCtrl" ng-cloak>
-	<div class="container" style="margin-top: 50px;">
-		<!-- Login panel -->
-		<div class=" col-md-4 col-md-offset-4">
-			<div class="panel panel-default" ng-show="!user">
-				<div class="panel-heading">Google login with OAuth</div>
-				<div class="panel-body">
-					<div class="col-md-12">
-						<a class="btn btn-default" href="/login/google">Google Login</a>
-					</div>
-				</div>
-			</div>
-			<!-- End Login panel -->
- 
- 
-			<!-- Home panel. It will visible after successful login -->
-			<div class="panel panel-default" ng-show="user">
-				<div class="panel-heading">
-					<img class="p-img" alt=""
-						ng-src="{{user.userAuthentication.details.picture}}">
-					{{user.name}}
-				</div>
-				<div class="panel-body">
- 
- 
-					<div class="col-md-12">Email :
-						{{user.userAuthentication.details.email}}</div>
-					<div class="col-md-12">
-						<a href="#" class="btn btn-default margin-top-5"
-							ng-click="logout()"> Logout </a>
-					</div>
-				</div>
-			</div>
-			<!-- End Home Panel -->
- 
- 
-		</div>
+<head>
+  <link rel="icon" type="image/png" href="image/checkBoxIcon.ico">
+
+	<!-- Theme Made By www.w3schools.com - No Copyright -->
+	<title>CPP Calendar</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="567625698601-1tm35nqtjfp2hn2mpav51po9kl9loq90.apps.googleusercontent.com">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Checklist CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="home-style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+
+    <!-- jQuery/Bootstrap/Google js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</head>
+
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">
+        CPP Calendar
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">HOME</a></li>
+        <li><a href="checklist.html">ADD</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Container (HOME Section) -->
+<div id="home" class="text-center">
+  <div class="carousel-inner" class="text-center">
+      <img src="image/Tileable.png" alt="home-picture" style="width:100%;">
+      
+        <button id="text" onclick = "location.href = 'checklist.html';" class="loginBtn loginBtn--google">Login with Google</button>
+      
 	</div>
- 
-	<!-- Including Scripts -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	<script type="text/javascript" src="app/app.js"></script>
+</div>
 
-	<!-- Demo Project is running: <label id="status"></label> -->		
-	</body>
 
+
+  
+<footer class="text-center">
+  <a class="up-arrow" href="#home" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>&copy; Hit or Miss 2017 <br>
+    <a href="https://www.w3schools.com" data-toggle="tooltip">Theme Design</a></p> 
+</footer>
+
+<script src="/js/homepage.js"></script>
+<script src="/js/checklistScript.js"></script>
+
+</body>
 </html>
 
 
