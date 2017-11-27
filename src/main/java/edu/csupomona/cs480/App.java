@@ -15,7 +15,7 @@ import edu.csupomona.cs480.data.provider.UserManager;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
-@EnableOAuth2Sso
+//@EnableOAuth2Sso
 public class App {
 
     /**

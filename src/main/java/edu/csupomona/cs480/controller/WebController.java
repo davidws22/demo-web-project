@@ -80,7 +80,7 @@ public class WebController {
 	//@Value("${google.client.client-secret}")
 	private String clientSecret = "ePVBJ3JAWx10yMXT7mFuV-0S";
 	//@Value("${google.client.redirectUri}")
-	private String redirectURI = "http://localhost:8080/google/login";
+	private String redirectURI = "http://localhost:8080/login/google";
 
 	private Set<Event> events = new HashSet<>();
 
@@ -210,17 +210,18 @@ public class WebController {
 	}
 	
 	
-	@RequestMapping(value = "/google/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login/google", method = RequestMethod.GET)
 	public RedirectView googleConnectionStatus(HttpServletRequest request) throws Exception {
 		return new RedirectView(authorize());
 	}
 
-	@RequestMapping(value = "/google/login", method = RequestMethod.GET, params = "code")
+	@RequestMapping(value = "/login/google", method = RequestMethod.GET, params = "code")
 	public ResponseEntity<String> oauth2Callback(@RequestParam(value = "code") String code) {
 		com.google.api.services.calendar.model.Events eventList;
 		String message;
 		try {
 			TokenResponse response = flow.newTokenRequest(code).setRedirectUri(redirectURI).execute();
+			System.out.println("This is the token value: >>>>>>> " + response.getAccessToken());
 			credential = flow.createAndStoreCredential(response, "userID");
 			client = new com.google.api.services.calendar.Calendar.Builder(httpTransport, JSON_FACTORY, credential)
 					.setApplicationName(APPLICATION_NAME).build();

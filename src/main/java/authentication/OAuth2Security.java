@@ -16,7 +16,7 @@ import org.springframework.security.oauth2.client.token.grant.code.Authorization
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
  
-@Configurable
+/*@Configurable
 @EnableWebSecurity
 public class OAuth2Security extends WebSecurityConfigurerAdapter {
  
@@ -47,11 +47,11 @@ public class OAuth2Security extends WebSecurityConfigurerAdapter {
 	}
  
  
-	/**
+	*//**
 	 * Method for creating filter for OAuth authentication
 	 * 
 	 * @return OAuth2ClientAuthenticationProcessingFilter
-	 */
+	 *//*
 	private OAuth2ClientAuthenticationProcessingFilter filter() {
 		// Creating the filter for "/login/google" url
 		OAuth2ClientAuthenticationProcessingFilter oAuth2Filter = new OAuth2ClientAuthenticationProcessingFilter(
@@ -103,4 +103,4 @@ public class OAuth2Security extends WebSecurityConfigurerAdapter {
 	}
  
  
-}
+}*/
