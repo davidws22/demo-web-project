@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="image/checkBoxIcon.ico">
+
+	<!-- Theme Made By www.w3schools.com - No Copyright -->
+	<title>CPP Calendar</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="567625698601-1tm35nqtjfp2hn2mpav51po9kl9loq90.apps.googleusercontent.com">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="home-style.css">
+    <link rel="stylesheet" type="text/css" href="about.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+
+    <!-- jQuery/Bootstrap/Google js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+	
+</head>
+
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">CPP Calendar</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">HOME</a></li>
+        <li><a href="checklist.html">ADD</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Container (ABOUT Section) -->
+<div id="about" class="container text-center">
+  <h3>ABOUT</h3>
+  <div class="rainbow"><a data-animation="ripple" onclick="goToGithub()">Source Code</a></div>
+  <br><br>
+  <h3>DEVELOPERS</h3>
+  <p>[Click pictures to expand]</p>
+  <br>
+  <div class="row">
+    <div class="col-sm-2 col-md-offset-1">
+      <p class="text-center"><strong>Phillip Kasteiner</strong></p><br>
+      <a href="#demo" data-toggle="collapse">
+        <img src="http://4.bp.blogspot.com/-zsbDeAUd8aY/US7F0ta5d9I/AAAAAAAAEKY/UL2AAhHj6J8/s1600/facebook-default-no-profile-pic.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+      </a>
+      <div id="demo" class="collapse">
+        <p>Back-end Developer</p>
+        <p><a href="https://github.com/phillipkasteiner">
+          <img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png" alt="HTML tutorial" style="width:20px;height:20px;border:0;"></a>
+        </p>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <p class="text-center"><strong>David Shin</strong></p><br>
+      <a href="#demo2" data-toggle="collapse">
+        <img src="image/david.jpg" class="img-circle person" alt="David" width="255" height="255">
+      </a>
+      <div id="demo2" class="collapse">
+        <p>Back-end Developer</p>
+        <p><a href="https://github.com/davidws22">
+          <img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png" alt="HTML tutorial" style="width:20px;height:20px;border:0;"></a>
+        </p>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <p class="text-center"><strong>Jung Yeo</strong></p><br>
+      <a href="#demo3" data-toggle="collapse">
+        <img src="image/jung.jpg" class="img-circle person" alt="Jung" width="255" height="255">
+      </a>
+      <div id="demo3" class="collapse">
+        <p>Front-end Developer</p>
+        <p><a href="https://github.com/JungYeo0">
+          <img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png" alt="HTML tutorial" style="width:20px;height:20px;border:0;"></a>
+        </p>
+      </div>
+    </div>
+      <div class="col-sm-2">
+      <p class="text-center"><strong>Vivian Long</strong></p><br>
+      <a href="#demo4" data-toggle="collapse">
+        <img src="http://1.bp.blogspot.com/-jHrJ3VITQf8/UDILF_ctbOI/AAAAAAAACn4/UwOvDmW4EJw/s1600/CUTE+GIRL+HAIR+FB+DP.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+      </a>
+      <div id="demo4" class="collapse">
+        <p>Front-end Developer</p>
+        <p><a href="https://github.com/vlong93">
+          <img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png" alt="HTML tutorial" style="width:20px;height:20px;border:0;"></a>
+        </p>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <p class="text-center"><strong>Summaya Kazi</strong></p><br>
+      <a href="#demo5" data-toggle="collapse">
+        <img src="http://1.bp.blogspot.com/-jHrJ3VITQf8/UDILF_ctbOI/AAAAAAAACn4/UwOvDmW4EJw/s1600/CUTE+GIRL+HAIR+FB+DP.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+      </a>
+      <div id="demo5" class="collapse">
+        <p>Front-end Developer</p>
+        <p><a href="https://github.com/sakazi">
+          <img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png" alt="HTML tutorial" style="width:20px;height:20px;border:0;"></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<footer class="text-center">
+  <a class="up-arrow" href="#home" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>&copy; Hit or Miss 2017 <br> 
+    <a href="https://www.w3schools.com" data-toggle="tooltip">Theme Design</a></p> 
+</footer>
+
+<script src="homepage.js"></script>
+<script src="checklistScript.js"></script>
+<script src="about.js"></script>
+
+</body>
+</html>

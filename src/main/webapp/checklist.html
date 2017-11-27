@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="image/checkBoxIcon.ico">
+
+	<!-- Theme Made By www.w3schools.com - No Copyright -->
+	<title>CPP Calendar</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="567625698601-1tm35nqtjfp2hn2mpav51po9kl9loq90.apps.googleusercontent.com">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Checklist CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="home-style.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+
+    <!-- jQuery/Bootstrap/Google js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!-- bag of mystery-->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+	
+</head>
+
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="50" onload="onLoadMake();">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">CPP Calendar</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">HOME</a></li>
+        <li><a href="checklist.html">ADD</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Container (ADD Section) -->
+<div id="add" class="text-center">
+  <div class="container">
+    <h3 class="text-center">ADD</h3>
+	    <p class="text-center">
+            
+	    	<div id="checklist"></div>
+          <a type="button" onclick="submitButtonPress()" class="boton" href="#">Submit</a>
+	   </p>
+  </div>
+</div>
+    
+
+<!-- Container (CALENDAR Section) -->
+<div id="events" class="bg-1 text-center">
+  <div class="container">
+    <h3 class="text-center">CALENDAR</h3>
+
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=tiiivp5ufbr50b77rvfqr50i0o%40group.calendar.google.com&amp;color=%23875509&amp;src=h20djm9o4relnj5t8cpii410uc%40group.calendar.google.com&amp;color=%23182C57&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%232F6309&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no">
+    </iframe>
+
+  </div>
+</div>
+
+  
+<footer class="text-center">
+  <a class="up-arrow" href="#home" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>&copy; Hit or Miss 2017 <br>
+    <a href="https://www.w3schools.com" data-toggle="tooltip">Theme Design</a></p> 
+</footer>
+
+<script src="homepage.js"></script>
+<script src="checklistScript.js"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+</body>
+</html>
