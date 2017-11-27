@@ -16,8 +16,7 @@ import edu.csupomona.cs480.data.GpsProduct;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.GpsProductManager;
 import edu.csupomona.cs480.data.provider.UserManager;
-
-
+import edu.csupomona.cs480.util.event;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -32,6 +31,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -52,6 +52,9 @@ import com.google.api.client.util.DateTime;
 import com.google.api.services.calendar.Calendar.Events;
 import com.google.api.services.calendar.CalendarScopes;
 import com.google.api.services.calendar.model.Event;
+import com.google.api.services.calendar.model.EventDateTime;
+import com.google.api.services.calendar.Calendar;
+
 
 
 /**
@@ -220,12 +223,43 @@ public class WebController {
 		com.google.api.services.calendar.model.Events eventList;
 		String message;
 		try {
+			Object var = SecurityContextHolder.getContext().getAuthentication().getCredentials();
+			System.out.println("This is the Default password>>>>>>>> " + var);
 			TokenResponse response = flow.newTokenRequest(code).setRedirectUri(redirectURI).execute();
 			System.out.println("This is the token value: >>>>>>> " + response.getAccessToken());
 			credential = flow.createAndStoreCredential(response, "userID");
 			client = new com.google.api.services.calendar.Calendar.Builder(httpTransport, JSON_FACTORY, credential)
 					.setApplicationName(APPLICATION_NAME).build();
 			Events events = client.events();
+			//my code to insert event
+/*			event E1 = new event("2017-11-26T16:30:00-08:00", "2017-11-16T18:30:00-08:00", "This is my first event description",
+					"CSS meeting", "5",
+					"Building 8, Room 345", "CSS", "css@gmail.com");
+			
+			*/
+			Event event = new Event()
+				    .setSummary("CSS Meeting")
+				    .setLocation("Building 8, Room 345")
+				    .setDescription("A chance to hear more about Google's developer products.")
+				    .setColorId("5");
+			DateTime startDateTime = new DateTime("2017-11-26T14:30:00-08:00");
+			EventDateTime start = new EventDateTime()
+			    .setDateTime(startDateTime)
+			    .setTimeZone("America/Los_Angeles");
+			event.setStart(start);
+
+			DateTime endDateTime = new DateTime("2017-11-26T16:30:00-08:00");
+			EventDateTime end = new EventDateTime()
+			    .setDateTime(endDateTime)
+			    .setTimeZone("America/Los_Angeles");
+			event.setEnd(end);
+			
+
+			/*Event E11 = E1.makeEvent();*/
+			event = client.events().insert("primary", event).execute();
+			
+			
+			
 			eventList = events.list("primary").setTimeMin(date1).setTimeMax(date2).execute();
 			message = eventList.getItems().toString();
 			System.out.println("My:" + eventList.getItems());
